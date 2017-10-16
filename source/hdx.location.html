@@ -1,0 +1,382 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>hdx.location package &#8212; HDX Python Country 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="HDX Python Country Documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="hdx-location-package">
+<h1>hdx.location package<a class="headerlink" href="#hdx-location-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-hdx.location.country">
+<span id="hdx-location-country-module"></span><h2>hdx.location.country module<a class="headerlink" href="#module-hdx.location.country" title="Permalink to this headline">¶</a></h2>
+<p>Country location</p>
+<dl class="class">
+<dt id="hdx.location.country.Country">
+<em class="property">class </em><code class="descclassname">hdx.location.country.</code><code class="descname">Country</code><a class="headerlink" href="#hdx.location.country.Country" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Location class with various methods to help with countries and regions. Uses World Bank API which supplies data
+in form:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;AFG&#39;</span><span class="p">,</span> <span class="s1">&#39;iso2Code&#39;</span><span class="p">:</span> <span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">,</span>
+<span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="s1">&#39;34.5228&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="s1">&#39;69.1761&#39;</span><span class="p">,</span>
+<span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;South Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;SAS&#39;</span><span class="p">},</span>
+<span class="s1">&#39;adminregion&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;South Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;SAS&#39;</span><span class="p">},</span>
+<span class="s1">&#39;capitalCity&#39;</span><span class="p">:</span> <span class="s1">&#39;Kabul&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lendingType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;IDA&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;IDX&#39;</span><span class="p">},</span>
+<span class="s1">&#39;incomeLevel&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;Low income&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;LIC&#39;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>Valid regions are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;EAS&#39;</span><span class="p">:</span> <span class="s1">&#39;East Asia &amp; Pacific&#39;</span><span class="p">,</span> <span class="s1">&#39;SAS&#39;</span><span class="p">:</span> <span class="s1">&#39;South Asia&#39;</span><span class="p">,</span>
+<span class="s1">&#39;MEA&#39;</span><span class="p">:</span> <span class="s1">&#39;Middle East &amp; North Africa&#39;</span><span class="p">,</span> <span class="s1">&#39;ECS&#39;</span><span class="p">:</span> <span class="s1">&#39;Europe &amp; Central Asia&#39;</span><span class="p">,</span>
+<span class="s1">&#39;LCN&#39;</span><span class="p">:</span> <span class="s1">&#39;Latin America &amp; Caribbean &#39;</span><span class="p">,</span> <span class="s1">&#39;NAC&#39;</span><span class="p">:</span> <span class="s1">&#39;North America&#39;</span><span class="p">,</span>
+<span class="s1">&#39;SSF&#39;</span><span class="p">:</span> <span class="s1">&#39;Sub-Saharan Africa &#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.countriesdata">
+<em class="property">static </em><code class="descname">countriesdata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.countriesdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read countries data from World Bank API (falling back to file)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Countries dictionaries</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[Dict[Dict]]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.get_countries_in_region">
+<em class="property">static </em><code class="descname">get_countries_in_region</code><span class="sig-paren">(</span><em>region</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_countries_in_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get countries (iso 3 codes) in continent</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>region</strong> (<em>str</em>) – Three letter region code or region name</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if region not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Sorted list of iso 3 country names</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List(str)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.get_country_info_from_iso2">
+<em class="property">static </em><code class="descname">get_country_info_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get country name from iso2 code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iso2</strong> (<em>str</em>) – Iso 2 code for which to get country name</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">country information</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[Dict[str]]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.get_country_info_from_iso3">
+<em class="property">static </em><code class="descname">get_country_info_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get country information from iso3 code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iso3</strong> (<em>str</em>) – Iso 3 code for which to get country name</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">country information</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[Dict[str]]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.get_country_name_from_iso2">
+<em class="property">static </em><code class="descname">get_country_name_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get country name from iso2 code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iso2</strong> (<em>str</em>) – Iso 2 code for which to get country name</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">country name</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.get_country_name_from_iso3">
+<em class="property">static </em><code class="descname">get_country_name_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get country name from iso3 code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iso3</strong> (<em>str</em>) – Iso 3 code for which to get country name</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">country name</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.get_iso3_country_code">
+<em class="property">static </em><code class="descname">get_iso3_country_code</code><span class="sig-paren">(</span><em>country</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get iso 3 code for country. Only exact matches or None are returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>country</strong> (<em>str</em>) – Country for which to get iso 3 code</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Return iso 3 country code or None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.get_iso3_country_code_partial">
+<em class="property">static </em><code class="descname">get_iso3_country_code_partial</code><span class="sig-paren">(</span><em>country</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code_partial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get iso 3 code for country. A tuple is returned with the first value being the iso 3 code and the second
+showing if the match is exact or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>country</strong> (<em>str</em>) – Country for which to get iso 3 code</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Return iso 3 code and if the match is exact or (None, False).</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Tuple[[Optional[str], bool]]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.get_iso3_from_iso2">
+<em class="property">static </em><code class="descname">get_iso3_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_from_iso2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get iso3 from iso2 code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iso2</strong> (<em>str</em>) – Iso 2 code for which to get country name</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Iso 3 code</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.set_countriesdata">
+<em class="property">static </em><code class="descname">set_countriesdata</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_countriesdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up countries data from data in form provided by World Bank</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>Dict</em><em>]</em><em>]</em>) – Countries data in form provided by World Bank</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.location.country.Country.set_data_url">
+<em class="property">static </em><code class="descname">set_data_url</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_data_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set url from which to retrieve countries data. Setting it to None avoids using the network and instead uses
+the internal fallback file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Url from which to retrieve countries data. Set to None to use fallback file.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdx.location">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hdx.location" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">hdx.location package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-hdx.location.country">hdx.location.country module</a></li>
+<li><a class="reference internal" href="#module-hdx.location">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">HDX Python Country Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/hdx.location.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;Michael Rans.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/source/hdx.location.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
