@@ -51,8 +51,51 @@
 <dt id="hdx.location.country.Country">
 <em class="property">class </em><code class="descclassname">hdx.location.country.</code><code class="descname">Country</code><a class="headerlink" href="#hdx.location.country.Country" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Location class with various methods to help with countries and regions. Uses World Bank API which supplies data
-in form:</p>
+<p>Location class with various methods to help with countries and regions. Uses UNStats M49 webpage which
+supplies data in form:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>      <span class="o">&lt;</span><span class="n">table</span> <span class="nb">id</span> <span class="o">=</span> <span class="s2">&quot;downloadTableEN&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;compact&quot;</span> <span class="n">cellspacing</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span> <span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">thead</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Global</span> <span class="n">Code</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Global</span> <span class="n">Name</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Region</span> <span class="n">Code</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Region</span> <span class="n">Name</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Sub</span><span class="o">-</span><span class="n">region</span> <span class="n">Code</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Sub</span><span class="o">-</span><span class="n">region</span> <span class="n">Name</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Intermediate</span> <span class="n">Region</span> <span class="n">Code</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Intermediate</span> <span class="n">Region</span> <span class="n">Name</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Country</span> <span class="ow">or</span> <span class="n">Area</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">M49</span> <span class="n">Code</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">ISO</span><span class="o">-</span><span class="n">alpha3</span> <span class="n">Code</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Least</span> <span class="n">Developed</span> <span class="n">Countries</span> <span class="p">(</span><span class="n">LDC</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Land</span> <span class="n">Locked</span> <span class="n">Developing</span> <span class="n">Countries</span> <span class="p">(</span><span class="n">LLDC</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Small</span> <span class="n">Island</span> <span class="n">Developing</span> <span class="n">States</span> <span class="p">(</span><span class="n">SIDS</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Developed</span> <span class="o">/</span> <span class="n">Developing</span> <span class="n">Countries</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">thead</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">tbody</span><span class="o">&gt;</span>
+                      <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mi">001</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">World</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mi">002</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Africa</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mi">015</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Northern</span> <span class="n">Africa</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">Algeria</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="mi">012</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span><span class="n">DZA</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span>                                <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span>                                <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span>                                <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span>                                  <span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">Developing</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+                        <span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+                      <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                      <span class="o">...</span>
+</pre></div>
+</div>
+<p>and World Bank API which supplies data in form:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;AFG&#39;</span><span class="p">,</span> <span class="s1">&#39;iso2Code&#39;</span><span class="p">:</span> <span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">,</span>
 <span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="s1">&#39;34.5228&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="s1">&#39;69.1761&#39;</span><span class="p">,</span>
 <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;South Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;SAS&#39;</span><span class="p">},</span>
@@ -62,17 +105,10 @@ in form:</p>
 <span class="s1">&#39;incomeLevel&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;Low income&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;LIC&#39;</span><span class="p">}}</span>
 </pre></div>
 </div>
-<p>Valid regions are:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;EAS&#39;</span><span class="p">:</span> <span class="s1">&#39;East Asia &amp; Pacific&#39;</span><span class="p">,</span> <span class="s1">&#39;SAS&#39;</span><span class="p">:</span> <span class="s1">&#39;South Asia&#39;</span><span class="p">,</span>
-<span class="s1">&#39;MEA&#39;</span><span class="p">:</span> <span class="s1">&#39;Middle East &amp; North Africa&#39;</span><span class="p">,</span> <span class="s1">&#39;ECS&#39;</span><span class="p">:</span> <span class="s1">&#39;Europe &amp; Central Asia&#39;</span><span class="p">,</span>
-<span class="s1">&#39;LCN&#39;</span><span class="p">:</span> <span class="s1">&#39;Latin America &amp; Caribbean &#39;</span><span class="p">,</span> <span class="s1">&#39;NAC&#39;</span><span class="p">:</span> <span class="s1">&#39;North America&#39;</span><span class="p">,</span>
-<span class="s1">&#39;SSF&#39;</span><span class="p">:</span> <span class="s1">&#39;Sub-Saharan Africa &#39;</span><span class="p">}</span>
-</pre></div>
-</div>
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.countriesdata">
-<em class="property">static </em><code class="descname">countriesdata</code><span class="sig-paren">(</span><em>use_live=True</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.countriesdata" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read countries data from World Bank API (falling back to file)</p>
+<em class="property">classmethod </em><code class="descname">countriesdata</code><span class="sig-paren">(</span><em>use_live=True</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.countriesdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read countries data from UNStats M49 website and World Bank API (falling back to file)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -87,16 +123,16 @@ in form:</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_countries_in_region">
-<em class="property">static </em><code class="descname">get_countries_in_region</code><span class="sig-paren">(</span><em>region</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_countries_in_region" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get countries (iso 3 codes) in continent</p>
+<em class="property">classmethod </em><code class="descname">get_countries_in_region</code><span class="sig-paren">(</span><em>region</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_countries_in_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get countries (iso 3 codes) in region</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>region</strong> (<em>str</em>) – Three letter region code or region name</li>
+<li><strong>region</strong> (<em>str</em>) – Three digit UNStats M49 region code or region name</li>
 <li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
 <li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if region not found. Defaults to None.</li>
 </ul>
@@ -112,9 +148,9 @@ in form:</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_country_info_from_iso2">
-<em class="property">static </em><code class="descname">get_country_info_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso2" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">get_country_info_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from iso2 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -137,9 +173,9 @@ in form:</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_country_info_from_iso3">
-<em class="property">static </em><code class="descname">get_country_info_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso3" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">get_country_info_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country information from iso3 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -162,9 +198,9 @@ in form:</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_country_name_from_iso2">
-<em class="property">static </em><code class="descname">get_country_name_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso2" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">get_country_name_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from iso2 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -187,9 +223,9 @@ in form:</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_country_name_from_iso3">
-<em class="property">static </em><code class="descname">get_country_name_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso3" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">get_country_name_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from iso3 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -212,10 +248,10 @@ in form:</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_iso3_country_code">
-<em class="property">static </em><code class="descname">get_iso3_country_code</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get iso 3 code for country. Only exact matches or None are returned.</p>
+<em class="property">classmethod </em><code class="descname">get_iso3_country_code</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get iso 3 code for cls. Only exact matches or None are returned.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -237,10 +273,10 @@ in form:</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_iso3_country_code_partial">
-<em class="property">static </em><code class="descname">get_iso3_country_code_partial</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code_partial" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get iso 3 code for country. A tuple is returned with the first value being the iso 3 code and the second
+<em class="property">classmethod </em><code class="descname">get_iso3_country_code_partial</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code_partial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get iso 3 code for cls. A tuple is returned with the first value being the iso 3 code and the second
 showing if the match is exact or not.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -263,9 +299,9 @@ showing if the match is exact or not.</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_iso3_from_iso2">
-<em class="property">static </em><code class="descname">get_iso3_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_from_iso2" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">get_iso3_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_from_iso2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get iso3 from iso2 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -288,15 +324,57 @@ showing if the match is exact or not.</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.set_countriesdata">
-<em class="property">static </em><code class="descname">set_countriesdata</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_countriesdata" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set up countries data from data in form provided by World Bank</p>
+<em class="property">classmethod </em><code class="descname">set_countriesdata</code><span class="sig-paren">(</span><em>json</em>, <em>html</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_countriesdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up countries data from data in form provided by UNStats and World Bank</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>Dict</em><em>]</em><em>]</em>) – Countries data in form provided by World Bank</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>json</strong> (<em>Any</em>) – Countries data in JSON format provided by World Bank</li>
+<li><strong>html</strong> (<em>str</em>) – Countries data in HTML format provided by UNStats</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hdx.location.country.Country.set_unstats_url_tablename">
+<em class="property">classmethod </em><code class="descname">set_unstats_url_tablename</code><span class="sig-paren">(</span><em>url=None</em>, <em>tablename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_unstats_url_tablename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set UN Stats url and HTMl table name from which to retrieve countries data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) – UN Stats url from which to retrieve countries data. Defaults to internal value.</li>
+<li><strong>tablename</strong> (<em>str</em>) – UN Stats HTML table name from which to retrieve countries data. Defaults to internal value.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hdx.location.country.Country.set_worldbank_url">
+<em class="property">classmethod </em><code class="descname">set_worldbank_url</code><span class="sig-paren">(</span><em>url=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_worldbank_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set World Bank url from which to retrieve countries data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> (<em>str</em>) – World Bank url from which to retrieve countries data. Defaults to internal value.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
 </tr>
@@ -304,23 +382,12 @@ showing if the match is exact or not.</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="hdx.location.country.Country.set_data_url">
-<em class="property">static </em><code class="descname">set_data_url</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_data_url" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set url from which to retrieve countries data. Setting it to None avoids using the network and instead uses
-the internal fallback file.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Url from which to retrieve countries data. Set to None to use fallback file.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
+<dl class="exception">
+<dt id="hdx.location.country.CountryError">
+<em class="property">exception </em><code class="descclassname">hdx.location.country.</code><code class="descname">CountryError</code><a class="headerlink" href="#hdx.location.country.CountryError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 </div>
