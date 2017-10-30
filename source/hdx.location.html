@@ -105,6 +105,11 @@ supplies data in form:</p>
 <span class="s1">&#39;incomeLevel&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;Low income&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;LIC&#39;</span><span class="p">}}</span>
 </pre></div>
 </div>
+<dl class="attribute">
+<dt id="hdx.location.country.Country.abbreviations">
+<code class="descname">abbreviations</code><em class="property"> = {'FMR.': 'FORMER', 'PROV.': 'PROVINCE', 'REP.': 'REPUBLIC', 'TERR.': 'TERRITORY', 'ST.': 'SAINT', 'DEM.': 'DEMOCRATIC', 'UTD': 'UNITED'}</em><a class="headerlink" href="#hdx.location.country.Country.abbreviations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="classmethod">
 <dt id="hdx.location.country.Country.countriesdata">
 <em class="property">classmethod </em><code class="descname">countriesdata</code><span class="sig-paren">(</span><em>use_live=True</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.countriesdata" title="Permalink to this definition">¶</a></dt>
@@ -249,6 +254,24 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="classmethod">
+<dt id="hdx.location.country.Country.get_expanded_countries">
+<em class="property">classmethod </em><code class="descname">get_expanded_countries</code><span class="sig-paren">(</span><em>country</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_expanded_countries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets country with abbreviations expanded to return multiple candidates. (eg. FED -&gt; FEDERATED, FEDERAL etc.)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> (<em>str</em>) – Country to expand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Candidate expansions of abbreviations</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[str]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_iso3_country_code">
 <em class="property">classmethod </em><code class="descname">get_iso3_country_code</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get iso 3 code for cls. Only exact matches or None are returned.</p>
@@ -323,6 +346,11 @@ showing if the match is exact or not.</p>
 </tbody>
 </table>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="hdx.location.country.Country.multiple_abbreviations">
+<code class="descname">multiple_abbreviations</code><em class="property"> = {'FED.': ['FEDERATION', 'FEDERAL', 'FEDERATED'], 'ISL.': ['ISLAND', 'ISLANDS']}</em><a class="headerlink" href="#hdx.location.country.Country.multiple_abbreviations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="hdx.location.country.Country.set_countriesdata">
