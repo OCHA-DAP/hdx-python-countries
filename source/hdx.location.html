@@ -107,7 +107,7 @@ supplies data in form:</p>
 </div>
 <dl class="attribute">
 <dt id="hdx.location.country.Country.abbreviations">
-<code class="descname">abbreviations</code><em class="property"> = {'FMR.': 'FORMER', 'PROV.': 'PROVINCE', 'REP.': 'REPUBLIC', 'TERR.': 'TERRITORY', 'ST.': 'SAINT', 'DEM.': 'DEMOCRATIC', 'UTD': 'UNITED'}</em><a class="headerlink" href="#hdx.location.country.Country.abbreviations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">abbreviations</code><em class="property"> = {'PROV.': 'PROVINCE', 'UTD.': 'UNITED', 'REP.': 'REPUBLIC', 'FMR.': 'FORMER', 'ST.': 'SAINT', 'DEM.': 'DEMOCRATIC'}</em><a class="headerlink" href="#hdx.location.country.Country.abbreviations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
@@ -123,6 +123,24 @@ supplies data in form:</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Countries dictionaries</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[Dict[Dict]]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hdx.location.country.Country.expand_countryname_abbrevs">
+<em class="property">classmethod </em><code class="descname">expand_countryname_abbrevs</code><span class="sig-paren">(</span><em>country</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.expand_countryname_abbrevs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expands abbreviation(s) in country name in various ways (eg. FED -&gt; FEDERATED, FEDERAL etc.)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> (<em>str</em>) – Country with abbreviation(s)to expand</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Return uppercase country name with abbreviation(s) expanded in various ways</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[str]</td>
 </tr>
 </tbody>
 </table>
@@ -254,24 +272,6 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="hdx.location.country.Country.get_expanded_countries">
-<em class="property">classmethod </em><code class="descname">get_expanded_countries</code><span class="sig-paren">(</span><em>country</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_expanded_countries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets country with abbreviations expanded to return multiple candidates. (eg. FED -&gt; FEDERATED, FEDERAL etc.)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> (<em>str</em>) – Country to expand</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Candidate expansions of abbreviations</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[str]</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="classmethod">
 <dt id="hdx.location.country.Country.get_iso3_country_code">
 <em class="property">classmethod </em><code class="descname">get_iso3_country_code</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get iso 3 code for cls. Only exact matches or None are returned.</p>
@@ -297,8 +297,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="hdx.location.country.Country.get_iso3_country_code_partial">
-<em class="property">classmethod </em><code class="descname">get_iso3_country_code_partial</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code_partial" title="Permalink to this definition">¶</a></dt>
+<dt id="hdx.location.country.Country.get_iso3_country_code_fuzzy">
+<em class="property">classmethod </em><code class="descname">get_iso3_country_code_fuzzy</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code_fuzzy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get iso 3 code for cls. A tuple is returned with the first value being the iso 3 code and the second
 showing if the match is exact or not.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -349,7 +349,7 @@ showing if the match is exact or not.</p>
 
 <dl class="attribute">
 <dt id="hdx.location.country.Country.multiple_abbreviations">
-<code class="descname">multiple_abbreviations</code><em class="property"> = {'FED.': ['FEDERATION', 'FEDERAL', 'FEDERATED'], 'ISL.': ['ISLAND', 'ISLANDS']}</em><a class="headerlink" href="#hdx.location.country.Country.multiple_abbreviations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">multiple_abbreviations</code><em class="property"> = {'FED.': ['FEDERATION', 'FEDERAL', 'FEDERATED'], 'ISL.': ['ISLAND', 'ISLANDS'], 'TERR.': ['TERRITORY', 'TERRITORIES']}</em><a class="headerlink" href="#hdx.location.country.Country.multiple_abbreviations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
@@ -405,6 +405,29 @@ showing if the match is exact or not.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> (<em>str</em>) – World Bank url from which to retrieve countries data. Defaults to internal value.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hdx.location.country.Country.simplifications">
+<code class="descname">simplifications</code><em class="property"> = ['THE', 'OF', 'ISLAMIC', 'STATES', 'BOLIVARIAN', 'PLURINATIONAL', &quot;PEOPLE'S&quot;, 'DUTCH PART', 'FRENCH PART', 'MALVINAS', 'YUGOSLAV']</em><a class="headerlink" href="#hdx.location.country.Country.simplifications" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="hdx.location.country.Country.simplify_countryname">
+<em class="property">classmethod </em><code class="descname">simplify_countryname</code><span class="sig-paren">(</span><em>country</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.simplify_countryname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplifies country name by removing descriptive text eg. DEMOCRATIC, REPUBLIC OF etc.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> (<em>str</em>) – Country name to simplify</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns uppercase simplified country name</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
 </tr>
 </tbody>
 </table>
