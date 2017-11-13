@@ -107,7 +107,7 @@ supplies data in form:</p>
 </div>
 <dl class="attribute">
 <dt id="hdx.location.country.Country.abbreviations">
-<code class="descname">abbreviations</code><em class="property"> = {'PROV.': 'PROVINCE', 'UTD.': 'UNITED', 'REP.': 'REPUBLIC', 'FMR.': 'FORMER', 'ST.': 'SAINT', 'DEM.': 'DEMOCRATIC'}</em><a class="headerlink" href="#hdx.location.country.Country.abbreviations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">abbreviations</code><em class="property"> = {'UTD.': 'UNITED', 'W.': 'WEST', 'U.': 'UNITED', 'FMR.': 'FORMER', 'K.': 'KINGDOM', 'PROV.': 'PROVINCE', 'N.': 'NORTH', 'DEM.': 'DEMOCRATIC', 'E.': 'EAST', 'REP.': 'REPUBLIC', 'ST.': 'SAINT'}</em><a class="headerlink" href="#hdx.location.country.Country.abbreviations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
@@ -138,7 +138,7 @@ supplies data in form:</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> (<em>str</em>) – Country with abbreviation(s)to expand</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Return uppercase country name with abbreviation(s) expanded in various ways</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Uppercase country name with abbreviation(s) expanded in various ways</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[str]</td>
 </tr>
@@ -186,7 +186,7 @@ supplies data in form:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">country information</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Country information</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[Dict[str]]</p>
@@ -236,7 +236,7 @@ supplies data in form:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">country name</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Country name</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
@@ -261,7 +261,7 @@ supplies data in form:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">country name</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Country name</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
@@ -286,7 +286,7 @@ supplies data in form:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Return iso 3 country code or None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ISO 3 country code or None</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
@@ -312,7 +312,7 @@ showing if the match is exact or not.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Return iso 3 code and if the match is exact or (None, False).</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ISO 3 code and if the match is exact or (None, False).</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Tuple[[Optional[str], bool]]</p>
@@ -348,13 +348,18 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="hdx.location.country.Country.major_differentiators">
+<code class="descname">major_differentiators</code><em class="property"> = ['DEMOCRATIC', 'NORTH', 'SOUTH', 'EAST', 'WEST', 'STATES']</em><a class="headerlink" href="#hdx.location.country.Country.major_differentiators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="hdx.location.country.Country.multiple_abbreviations">
-<code class="descname">multiple_abbreviations</code><em class="property"> = {'FED.': ['FEDERATION', 'FEDERAL', 'FEDERATED'], 'ISL.': ['ISLAND', 'ISLANDS'], 'TERR.': ['TERRITORY', 'TERRITORIES']}</em><a class="headerlink" href="#hdx.location.country.Country.multiple_abbreviations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">multiple_abbreviations</code><em class="property"> = {'FED.': ['FEDERATION', 'FEDERAL', 'FEDERATED'], 'TERR.': ['TERRITORY', 'TERRITORIES'], 'S.': ['SOUTH', 'STATES'], 'ISL.': ['ISLAND', 'ISLANDS']}</em><a class="headerlink" href="#hdx.location.country.Country.multiple_abbreviations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="hdx.location.country.Country.set_countriesdata">
-<em class="property">classmethod </em><code class="descname">set_countriesdata</code><span class="sig-paren">(</span><em>json</em>, <em>html</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_countriesdata" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">set_countriesdata</code><span class="sig-paren">(</span><em>json</em>, <em>html</em>, <em>aliases</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_countriesdata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set up countries data from data in form provided by UNStats and World Bank</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -412,7 +417,7 @@ showing if the match is exact or not.</p>
 
 <dl class="attribute">
 <dt id="hdx.location.country.Country.simplifications">
-<code class="descname">simplifications</code><em class="property"> = ['THE', 'OF', 'ISLAMIC', 'STATES', 'BOLIVARIAN', 'PLURINATIONAL', &quot;PEOPLE'S&quot;, 'DUTCH PART', 'FRENCH PART', 'MALVINAS', 'YUGOSLAV']</em><a class="headerlink" href="#hdx.location.country.Country.simplifications" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simplifications</code><em class="property"> = ['THE', 'OF', 'ISLAMIC', 'STATES', 'BOLIVARIAN', 'PLURINATIONAL', &quot;PEOPLE'S&quot;, 'DUTCH PART', 'FRENCH PART', 'MALVINAS', 'YUGOSLAV', 'KINGDOM', 'PROTECTORATE']</em><a class="headerlink" href="#hdx.location.country.Country.simplifications" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
@@ -425,9 +430,9 @@ showing if the match is exact or not.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> (<em>str</em>) – Country name to simplify</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns uppercase simplified country name</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Uppercase simplified country name and list of removed words</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Tuple[str, List[str]]</td>
 </tr>
 </tbody>
 </table>
