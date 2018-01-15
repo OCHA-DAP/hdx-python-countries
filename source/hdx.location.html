@@ -107,7 +107,7 @@ supplies data in form:</p>
 </div>
 <dl class="attribute">
 <dt id="hdx.location.country.Country.abbreviations">
-<code class="descname">abbreviations</code><em class="property"> = {'UTD.': 'UNITED', 'W.': 'WEST', 'U.': 'UNITED', 'FMR.': 'FORMER', 'K.': 'KINGDOM', 'PROV.': 'PROVINCE', 'N.': 'NORTH', 'DEM.': 'DEMOCRATIC', 'E.': 'EAST', 'REP.': 'REPUBLIC', 'ST.': 'SAINT'}</em><a class="headerlink" href="#hdx.location.country.Country.abbreviations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">abbreviations</code><em class="property"> = {'DEM.': 'DEMOCRATIC', 'E.': 'EAST', 'FMR.': 'FORMER', 'K.': 'KINGDOM', 'N.': 'NORTH', 'PROV.': 'PROVINCE', 'REP.': 'REPUBLIC', 'ST.': 'SAINT', 'U.': 'UNITED', 'UTD.': 'UNITED', 'W.': 'WEST'}</em><a class="headerlink" href="#hdx.location.country.Country.abbreviations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
@@ -149,7 +149,7 @@ supplies data in form:</p>
 <dl class="classmethod">
 <dt id="hdx.location.country.Country.get_countries_in_region">
 <em class="property">classmethod </em><code class="descname">get_countries_in_region</code><span class="sig-paren">(</span><em>region</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_countries_in_region" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get countries (iso 3 codes) in region</p>
+<dd><p>Get countries (ISO3 codes) in region</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -161,7 +161,7 @@ supplies data in form:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Sorted list of iso 3 country names</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Sorted list of ISO3 country names</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List(str)</p>
@@ -174,13 +174,13 @@ supplies data in form:</p>
 <dl class="classmethod">
 <dt id="hdx.location.country.Country.get_country_info_from_iso2">
 <em class="property">classmethod </em><code class="descname">get_country_info_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get country name from iso2 code</p>
+<dd><p>Get country name from ISO2 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>iso2</strong> (<em>str</em>) – Iso 2 code for which to get country name</li>
+<li><strong>iso2</strong> (<em>str</em>) – ISO2 code for which to get country information</li>
 <li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
 <li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
 </ul>
@@ -199,13 +199,13 @@ supplies data in form:</p>
 <dl class="classmethod">
 <dt id="hdx.location.country.Country.get_country_info_from_iso3">
 <em class="property">classmethod </em><code class="descname">get_country_info_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso3" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get country information from iso3 code</p>
+<dd><p>Get country information from ISO3 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>iso3</strong> (<em>str</em>) – Iso 3 code for which to get country name</li>
+<li><strong>iso3</strong> (<em>str</em>) – ISO3 code for which to get country information</li>
 <li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
 <li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
 </ul>
@@ -222,15 +222,40 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="hdx.location.country.Country.get_country_name_from_iso2">
-<em class="property">classmethod </em><code class="descname">get_country_name_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get country name from iso2 code</p>
+<dt id="hdx.location.country.Country.get_country_info_from_m49">
+<em class="property">classmethod </em><code class="descname">get_country_info_from_m49</code><span class="sig-paren">(</span><em>m49</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_m49" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get country name from M49 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>iso2</strong> (<em>str</em>) – Iso 2 code for which to get country name</li>
+<li><strong>m49</strong> (<em>int</em>) – M49 numeric code for which to get country information</li>
+<li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Country information</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[Dict[str]]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hdx.location.country.Country.get_country_name_from_iso2">
+<em class="property">classmethod </em><code class="descname">get_country_name_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get country name from ISO2 code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iso2</strong> (<em>str</em>) – ISO2 code for which to get country name</li>
 <li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
 <li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
 </ul>
@@ -249,13 +274,13 @@ supplies data in form:</p>
 <dl class="classmethod">
 <dt id="hdx.location.country.Country.get_country_name_from_iso3">
 <em class="property">classmethod </em><code class="descname">get_country_name_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso3" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get country name from iso3 code</p>
+<dd><p>Get country name from ISO3 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>iso3</strong> (<em>str</em>) – Iso 3 code for which to get country name</li>
+<li><strong>iso3</strong> (<em>str</em>) – ISO3 code for which to get country name</li>
 <li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
 <li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
 </ul>
@@ -272,21 +297,71 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="hdx.location.country.Country.get_iso3_country_code">
-<em class="property">classmethod </em><code class="descname">get_iso3_country_code</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get iso 3 code for cls. Only exact matches or None are returned.</p>
+<dt id="hdx.location.country.Country.get_country_name_from_m49">
+<em class="property">classmethod </em><code class="descname">get_country_name_from_m49</code><span class="sig-paren">(</span><em>m49</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_m49" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get country name from M49 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>country</strong> (<em>str</em>) – Country for which to get iso 3 code</li>
+<li><strong>m49</strong> (<em>int</em>) – M49 numeric code for which to get country name</li>
 <li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
 <li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ISO 3 country code or None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Country name</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hdx.location.country.Country.get_iso2_from_iso3">
+<em class="property">classmethod </em><code class="descname">get_iso2_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso2_from_iso3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ISO2 from ISO3 code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iso3</strong> (<em>str</em>) – ISO3 code for which to get ISO2 code</li>
+<li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ISO2 code</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hdx.location.country.Country.get_iso3_country_code">
+<em class="property">classmethod </em><code class="descname">get_iso3_country_code</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ISO3 code for cls. Only exact matches or None are returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>country</strong> (<em>str</em>) – Country for which to get ISO3 code</li>
+<li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ISO3 country code or None</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
@@ -299,20 +374,20 @@ supplies data in form:</p>
 <dl class="classmethod">
 <dt id="hdx.location.country.Country.get_iso3_country_code_fuzzy">
 <em class="property">classmethod </em><code class="descname">get_iso3_country_code_fuzzy</code><span class="sig-paren">(</span><em>country</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code_fuzzy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get iso 3 code for cls. A tuple is returned with the first value being the iso 3 code and the second
+<dd><p>Get ISO3 code for cls. A tuple is returned with the first value being the ISO3 code and the second
 showing if the match is exact or not.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>country</strong> (<em>str</em>) – Country for which to get iso 3 code</li>
+<li><strong>country</strong> (<em>str</em>) – Country for which to get ISO3 code</li>
 <li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
 <li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ISO 3 code and if the match is exact or (None, False).</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ISO3 code and if the match is exact or (None, False).</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Tuple[[Optional[str], bool]]</p>
@@ -325,22 +400,72 @@ showing if the match is exact or not.</p>
 <dl class="classmethod">
 <dt id="hdx.location.country.Country.get_iso3_from_iso2">
 <em class="property">classmethod </em><code class="descname">get_iso3_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_from_iso2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get iso3 from iso2 code</p>
+<dd><p>Get ISO3 from ISO2 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>iso2</strong> (<em>str</em>) – Iso 2 code for which to get country name</li>
+<li><strong>iso2</strong> (<em>str</em>) – ISO2 code for which to get ISO3 code</li>
 <li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
 <li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Iso 3 code</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ISO3 code</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hdx.location.country.Country.get_iso3_from_m49">
+<em class="property">classmethod </em><code class="descname">get_iso3_from_m49</code><span class="sig-paren">(</span><em>m49</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_from_m49" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ISO3 from M49 code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m49</strong> (<em>int</em>) – M49 numeric code for which to get ISO3 code</li>
+<li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ISO3 code</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hdx.location.country.Country.get_m49_from_iso3">
+<em class="property">classmethod </em><code class="descname">get_m49_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>use_live=True</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_m49_from_iso3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get M49 from ISO3 code</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iso3</strong> (<em>str</em>) – ISO3 code for which to get M49 code</li>
+<li><strong>use_live</strong> (<em>bool</em>) – Try to get use latest data from web rather than file in package. Defaults to True.</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if country not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">M49 code</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[int]</p>
 </td>
 </tr>
 </tbody>
@@ -354,7 +479,7 @@ showing if the match is exact or not.</p>
 
 <dl class="attribute">
 <dt id="hdx.location.country.Country.multiple_abbreviations">
-<code class="descname">multiple_abbreviations</code><em class="property"> = {'FED.': ['FEDERATION', 'FEDERAL', 'FEDERATED'], 'TERR.': ['TERRITORY', 'TERRITORIES'], 'S.': ['SOUTH', 'STATES'], 'ISL.': ['ISLAND', 'ISLANDS']}</em><a class="headerlink" href="#hdx.location.country.Country.multiple_abbreviations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">multiple_abbreviations</code><em class="property"> = {'FED.': ['FEDERATION', 'FEDERAL', 'FEDERATED'], 'ISL.': ['ISLAND', 'ISLANDS'], 'S.': ['SOUTH', 'STATES'], 'TERR.': ['TERRITORY', 'TERRITORIES']}</em><a class="headerlink" href="#hdx.location.country.Country.multiple_abbreviations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
@@ -500,7 +625,7 @@ showing if the match is exact or not.</p>
       &copy;Michael Rans.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
