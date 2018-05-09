@@ -1,13 +1,6 @@
 hdx package
 ===========
 
-Subpackages
------------
-
-.. toctree::
-
-    hdx.location
-
 Module contents
 ---------------
 

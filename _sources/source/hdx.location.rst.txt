@@ -1,11 +1,11 @@
-hdx.location package
-====================
+hdx\.location package
+=====================
 
 Submodules
 ----------
 
-hdx.location.country module
----------------------------
+hdx\.location\.country module
+-----------------------------
 
 .. automodule:: hdx.location.country
     :members:
