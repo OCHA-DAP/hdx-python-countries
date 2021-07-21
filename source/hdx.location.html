@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>hdx.location package &#8212; HDX Python Country 1.0 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -31,16 +32,16 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="hdx-location-package">
+  <section id="hdx-location-package">
 <h1>hdx.location package<a class="headerlink" href="#hdx-location-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-hdx.location.adminone">
+</section>
+<section id="module-hdx.location.adminone">
 <span id="hdx-location-adminone-module"></span><h2>hdx.location.adminone module<a class="headerlink" href="#module-hdx.location.adminone" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="hdx.location.adminone.AdminOne">
-<em class="property">class </em><code class="sig-prename descclassname">hdx.location.adminone.</code><code class="sig-name descname">AdminOne</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">admin_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.adminone.AdminOne" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">hdx.location.adminone.</span></span><span class="sig-name descname"><span class="pre">AdminOne</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">admin_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.adminone.AdminOne" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>AdminOne class which takes in pcodes and then maps names to those pcodes with fuzzy matching if necessary. The
 input configuration dictionary, admin_config, requires key admin1_info which is a list with values of the form:</p>
@@ -54,12 +55,15 @@ admin1_name_replacements is a dictionary of textual replacements to try when fuz
 admin1_fuzzy_dont is a list of names for which fuzzy matching should not be tried</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>admin_config</strong> (<em>Dict</em>) – Configuration dictionary</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>admin_config</strong> (<em>Dict</em>) – Configuration dictionary</p></li>
+<li><p><strong>phonetics</strong> (<a class="reference internal" href="#hdx.location.phonetics.Phonetics" title="hdx.location.phonetics.Phonetics"><em>Phonetics</em></a>) – Phonetics object to use. Defaults to None (new instance).</p></li>
+</ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="hdx.location.adminone.AdminOne.convert_pcode_length">
-<code class="sig-name descname">convert_pcode_length</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">countryiso3</span></em>, <em class="sig-param"><span class="n">pcode</span></em>, <em class="sig-param"><span class="n">scrapername</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.adminone.AdminOne.convert_pcode_length" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.convert_pcode_length">
+<span class="sig-name descname"><span class="pre">convert_pcode_length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">countryiso3</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scrapername</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.adminone.AdminOne.convert_pcode_length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standardise pcode length by country and match to an internal pcode</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -79,8 +83,8 @@ admin1_fuzzy_dont is a list of names for which fuzzy matching should not be trie
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.adminone.AdminOne.fuzzy_pcode">
-<code class="sig-name descname">fuzzy_pcode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">countryiso3</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">scrapername</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.adminone.AdminOne.fuzzy_pcode" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.fuzzy_pcode">
+<span class="sig-name descname"><span class="pre">fuzzy_pcode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">countryiso3</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scrapername</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.adminone.AdminOne.fuzzy_pcode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fuzzy match name to pcode</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -100,8 +104,8 @@ admin1_fuzzy_dont is a list of names for which fuzzy matching should not be trie
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.adminone.AdminOne.get_pcode">
-<code class="sig-name descname">get_pcode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">countryiso3</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">scrapername</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.adminone.AdminOne.get_pcode" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.get_pcode">
+<span class="sig-name descname"><span class="pre">get_pcode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">countryiso3</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scrapername</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.adminone.AdminOne.get_pcode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get pcode for a given name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -121,8 +125,8 @@ admin1_fuzzy_dont is a list of names for which fuzzy matching should not be trie
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.adminone.AdminOne.init_matches_errors">
-<code class="sig-name descname">init_matches_errors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.adminone.AdminOne.init_matches_errors" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.init_matches_errors">
+<span class="sig-name descname"><span class="pre">init_matches_errors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#hdx.location.adminone.AdminOne.init_matches_errors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialise storage of fuzzy matches, ignored and errors for logging purposes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -132,13 +136,13 @@ admin1_fuzzy_dont is a list of names for which fuzzy matching should not be trie
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="hdx.location.adminone.AdminOne.name_to_pcode">
-<code class="sig-name descname">name_to_pcode</code><em class="property"> = {}</em><a class="headerlink" href="#hdx.location.adminone.AdminOne.name_to_pcode" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.name_to_pcode">
+<span class="sig-name descname"><span class="pre">name_to_pcode</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#hdx.location.adminone.AdminOne.name_to_pcode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.adminone.AdminOne.output_errors">
-<code class="sig-name descname">output_errors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.adminone.AdminOne.output_errors" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.output_errors">
+<span class="sig-name descname"><span class="pre">output_errors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.adminone.AdminOne.output_errors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output log of errors</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -151,8 +155,8 @@ admin1_fuzzy_dont is a list of names for which fuzzy matching should not be trie
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.adminone.AdminOne.output_ignored">
-<code class="sig-name descname">output_ignored</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.adminone.AdminOne.output_ignored" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.output_ignored">
+<span class="sig-name descname"><span class="pre">output_ignored</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.adminone.AdminOne.output_ignored" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output log of ignored</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -165,8 +169,8 @@ admin1_fuzzy_dont is a list of names for which fuzzy matching should not be trie
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.adminone.AdminOne.output_matches">
-<code class="sig-name descname">output_matches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.adminone.AdminOne.output_matches" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.output_matches">
+<span class="sig-name descname"><span class="pre">output_matches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.adminone.AdminOne.output_matches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output log of matches</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -179,34 +183,34 @@ admin1_fuzzy_dont is a list of names for which fuzzy matching should not be trie
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="hdx.location.adminone.AdminOne.pcode_lengths">
-<code class="sig-name descname">pcode_lengths</code><em class="property"> = {}</em><a class="headerlink" href="#hdx.location.adminone.AdminOne.pcode_lengths" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.pcode_lengths">
+<span class="sig-name descname"><span class="pre">pcode_lengths</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#hdx.location.adminone.AdminOne.pcode_lengths" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="hdx.location.adminone.AdminOne.pcode_to_iso3">
-<code class="sig-name descname">pcode_to_iso3</code><em class="property"> = {}</em><a class="headerlink" href="#hdx.location.adminone.AdminOne.pcode_to_iso3" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.pcode_to_iso3">
+<span class="sig-name descname"><span class="pre">pcode_to_iso3</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#hdx.location.adminone.AdminOne.pcode_to_iso3" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="hdx.location.adminone.AdminOne.pcode_to_name">
-<code class="sig-name descname">pcode_to_name</code><em class="property"> = {}</em><a class="headerlink" href="#hdx.location.adminone.AdminOne.pcode_to_name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.pcode_to_name">
+<span class="sig-name descname"><span class="pre">pcode_to_name</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#hdx.location.adminone.AdminOne.pcode_to_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="hdx.location.adminone.AdminOne.pcodes">
-<code class="sig-name descname">pcodes</code><em class="property"> = []</em><a class="headerlink" href="#hdx.location.adminone.AdminOne.pcodes" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.adminone.AdminOne.pcodes">
+<span class="sig-name descname"><span class="pre">pcodes</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#hdx.location.adminone.AdminOne.pcodes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-hdx.location.country">
+</section>
+<section id="module-hdx.location.country">
 <span id="hdx-location-country-module"></span><h2>hdx.location.country module<a class="headerlink" href="#module-hdx.location.country" title="Permalink to this headline">¶</a></h2>
 <p>Country location</p>
 <dl class="py class">
-<dt id="hdx.location.country.Country">
-<em class="property">class </em><code class="sig-prename descclassname">hdx.location.country.</code><code class="sig-name descname">Country</code><a class="headerlink" href="#hdx.location.country.Country" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">hdx.location.country.</span></span><span class="sig-name descname"><span class="pre">Country</span></span><a class="headerlink" href="#hdx.location.country.Country" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Country class with various methods to help with countries and regions. Uses OCHA countries feed which
 supplies data in form:</p>
@@ -216,13 +220,13 @@ supplies data in form:</p>
 </pre></div>
 </div>
 <dl class="py attribute">
-<dt id="hdx.location.country.Country.abbreviations">
-<code class="sig-name descname">abbreviations</code><em class="property"> = {'DEM.': 'DEMOCRATIC', 'E.': 'EAST', 'FMR.': 'FORMER', 'K.': 'KINGDOM', 'N.': 'NORTH', 'PROV.': 'PROVINCE', 'REP.': 'REPUBLIC', 'ST.': 'SAINT', 'U.': 'UNITED', 'UTD.': 'UNITED', 'W.': 'WEST'}</em><a class="headerlink" href="#hdx.location.country.Country.abbreviations" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.abbreviations">
+<span class="sig-name descname"><span class="pre">abbreviations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'DEM.':</span> <span class="pre">'DEMOCRATIC',</span> <span class="pre">'E.':</span> <span class="pre">'EAST',</span> <span class="pre">'FMR.':</span> <span class="pre">'FORMER',</span> <span class="pre">'K.':</span> <span class="pre">'KINGDOM',</span> <span class="pre">'N.':</span> <span class="pre">'NORTH',</span> <span class="pre">'PROV.':</span> <span class="pre">'PROVINCE',</span> <span class="pre">'REP.':</span> <span class="pre">'REPUBLIC',</span> <span class="pre">'ST.':</span> <span class="pre">'SAINT',</span> <span class="pre">'U.':</span> <span class="pre">'UNITED',</span> <span class="pre">'UTD.':</span> <span class="pre">'UNITED',</span> <span class="pre">'W.':</span> <span class="pre">'WEST'}</span></em><a class="headerlink" href="#hdx.location.country.Country.abbreviations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.countriesdata">
-<em class="property">classmethod </em><code class="sig-name descname">countriesdata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">country_name_overrides</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">country_name_mappings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.countriesdata" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.countriesdata">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">countriesdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country_name_overrides</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country_name_mappings</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.countriesdata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read countries data from OCHA countries feed (falling back to file)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -242,8 +246,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.expand_countryname_abbrevs">
-<em class="property">classmethod </em><code class="sig-name descname">expand_countryname_abbrevs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">country</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.expand_countryname_abbrevs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.expand_countryname_abbrevs">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">expand_countryname_abbrevs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.expand_countryname_abbrevs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Expands abbreviation(s) in country name in various ways (eg. FED -&gt; FEDERATED, FEDERAL etc.)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -259,8 +263,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_countries_in_region">
-<em class="property">classmethod </em><code class="sig-name descname">get_countries_in_region</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">region</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_countries_in_region" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_countries_in_region">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_countries_in_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_countries_in_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get countries (ISO3 codes) in region</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -280,8 +284,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_country_info_from_iso2">
-<em class="property">classmethod </em><code class="sig-name descname">get_country_info_from_iso2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso2</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_country_info_from_iso2">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_country_info_from_iso2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso2</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">ExceptionUpperBound</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from ISO2 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -301,8 +305,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_country_info_from_iso3">
-<em class="property">classmethod </em><code class="sig-name descname">get_country_info_from_iso3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso3</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso3" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_country_info_from_iso3">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_country_info_from_iso3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso3</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">ExceptionUpperBound</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_iso3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country information from ISO3 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -322,8 +326,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_country_info_from_m49">
-<em class="property">classmethod </em><code class="sig-name descname">get_country_info_from_m49</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m49</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_m49" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_country_info_from_m49">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_country_info_from_m49</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m49</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">ExceptionUpperBound</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_country_info_from_m49" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from M49 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -343,8 +347,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_country_name_from_iso2">
-<em class="property">classmethod </em><code class="sig-name descname">get_country_name_from_iso2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso2</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_country_name_from_iso2">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_country_name_from_iso2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso2</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from ISO2 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -364,8 +368,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_country_name_from_iso3">
-<em class="property">classmethod </em><code class="sig-name descname">get_country_name_from_iso3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso3</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso3" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_country_name_from_iso3">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_country_name_from_iso3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso3</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_iso3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from ISO3 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -385,8 +389,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_country_name_from_m49">
-<em class="property">classmethod </em><code class="sig-name descname">get_country_name_from_m49</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m49</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_m49" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_country_name_from_m49">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_country_name_from_m49</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m49</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_country_name_from_m49" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from M49 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -406,8 +410,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_iso2_from_iso3">
-<em class="property">classmethod </em><code class="sig-name descname">get_iso2_from_iso3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso3</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso2_from_iso3" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_iso2_from_iso3">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_iso2_from_iso3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso3</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_iso2_from_iso3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get ISO2 from ISO3 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -427,8 +431,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_iso3_country_code">
-<em class="property">classmethod </em><code class="sig-name descname">get_iso3_country_code</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">country</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_iso3_country_code">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_iso3_country_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get ISO3 code for cls. Only exact matches or None are returned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -448,8 +452,8 @@ supplies data in form:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_iso3_country_code_fuzzy">
-<em class="property">classmethod </em><code class="sig-name descname">get_iso3_country_code_fuzzy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">country</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">min_chars</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code_fuzzy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_iso3_country_code_fuzzy">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_iso3_country_code_fuzzy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_chars</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_country_code_fuzzy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get ISO3 code for cls. A tuple is returned with the first value being the ISO3 code and the second
 showing if the match is exact or not.</p>
 <dl class="field-list simple">
@@ -471,8 +475,8 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_iso3_from_iso2">
-<em class="property">classmethod </em><code class="sig-name descname">get_iso3_from_iso2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso2</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_from_iso2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_iso3_from_iso2">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_iso3_from_iso2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso2</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_from_iso2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get ISO3 from ISO2 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -492,8 +496,8 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_iso3_from_m49">
-<em class="property">classmethod </em><code class="sig-name descname">get_iso3_from_m49</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m49</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_from_m49" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_iso3_from_m49">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_iso3_from_m49</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m49</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_iso3_from_m49" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get ISO3 from M49 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -513,8 +517,8 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.get_m49_from_iso3">
-<em class="property">classmethod </em><code class="sig-name descname">get_m49_from_iso3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso3</span></em>, <em class="sig-param"><span class="n">use_live</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exception</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.get_m49_from_iso3" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.get_m49_from_iso3">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_m49_from_iso3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso3</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_live</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">hdx.location.country.T</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hdx.location.country.Country.get_m49_from_iso3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get M49 from ISO3 code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -534,18 +538,18 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="hdx.location.country.Country.major_differentiators">
-<code class="sig-name descname">major_differentiators</code><em class="property"> = ['DEMOCRATIC', 'NORTH', 'SOUTH', 'EAST', 'WEST', 'STATES']</em><a class="headerlink" href="#hdx.location.country.Country.major_differentiators" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.major_differentiators">
+<span class="sig-name descname"><span class="pre">major_differentiators</span></span><em class="property"> <span class="pre">=</span> <span class="pre">['DEMOCRATIC',</span> <span class="pre">'NORTH',</span> <span class="pre">'SOUTH',</span> <span class="pre">'EAST',</span> <span class="pre">'WEST',</span> <span class="pre">'STATES']</span></em><a class="headerlink" href="#hdx.location.country.Country.major_differentiators" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="hdx.location.country.Country.multiple_abbreviations">
-<code class="sig-name descname">multiple_abbreviations</code><em class="property"> = {'FED.': ['FEDERATION', 'FEDERAL', 'FEDERATED'], 'ISL.': ['ISLAND', 'ISLANDS'], 'S.': ['SOUTH', 'STATES'], 'TERR.': ['TERRITORY', 'TERRITORIES']}</em><a class="headerlink" href="#hdx.location.country.Country.multiple_abbreviations" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.multiple_abbreviations">
+<span class="sig-name descname"><span class="pre">multiple_abbreviations</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'FED.':</span> <span class="pre">['FEDERATION',</span> <span class="pre">'FEDERAL',</span> <span class="pre">'FEDERATED'],</span> <span class="pre">'ISL.':</span> <span class="pre">['ISLAND',</span> <span class="pre">'ISLANDS'],</span> <span class="pre">'S.':</span> <span class="pre">['SOUTH',</span> <span class="pre">'STATES'],</span> <span class="pre">'TERR.':</span> <span class="pre">['TERRITORY',</span> <span class="pre">'TERRITORIES']}</span></em><a class="headerlink" href="#hdx.location.country.Country.multiple_abbreviations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.set_countriesdata">
-<em class="property">classmethod </em><code class="sig-name descname">set_countriesdata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">countries</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_countriesdata" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.set_countriesdata">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">set_countriesdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">countries</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#hdx.location.country.Country.set_countriesdata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set up countries data from data in form provided by UNStats and World Bank</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -558,8 +562,8 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.set_country_name_mappings">
-<em class="property">classmethod </em><code class="sig-name descname">set_country_name_mappings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">country_name_mappings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_country_name_mappings" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.set_country_name_mappings">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">set_country_name_mappings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country_name_mappings</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#hdx.location.country.Country.set_country_name_mappings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup additional name mappings using dictionary of mappings from country name to iso3</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -572,8 +576,8 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.set_country_name_overrides">
-<em class="property">classmethod </em><code class="sig-name descname">set_country_name_overrides</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">country_name_overrides</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_country_name_overrides" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.set_country_name_overrides">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">set_country_name_overrides</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country_name_overrides</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#hdx.location.country.Country.set_country_name_overrides" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup name overrides using dictionary of mappings from iso3 to country name</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -586,8 +590,8 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.set_ocha_url">
-<em class="property">classmethod </em><code class="sig-name descname">set_ocha_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.set_ocha_url" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.set_ocha_url">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">set_ocha_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#hdx.location.country.Country.set_ocha_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set World Bank url from which to retrieve countries data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -600,13 +604,13 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="hdx.location.country.Country.simplifications">
-<code class="sig-name descname">simplifications</code><em class="property"> = ['THE', 'OF', 'ISLAMIC', 'STATES', 'BOLIVARIAN', 'PLURINATIONAL', &quot;PEOPLE'S&quot;, 'DUTCH PART', 'FRENCH PART', 'MALVINAS', 'YUGOSLAV', 'KINGDOM', 'PROTECTORATE']</em><a class="headerlink" href="#hdx.location.country.Country.simplifications" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.simplifications">
+<span class="sig-name descname"><span class="pre">simplifications</span></span><em class="property"> <span class="pre">=</span> <span class="pre">['THE',</span> <span class="pre">'OF',</span> <span class="pre">'ISLAMIC',</span> <span class="pre">'STATES',</span> <span class="pre">'BOLIVARIAN',</span> <span class="pre">'PLURINATIONAL',</span> <span class="pre">&quot;PEOPLE'S&quot;,</span> <span class="pre">'DUTCH</span> <span class="pre">PART',</span> <span class="pre">'FRENCH</span> <span class="pre">PART',</span> <span class="pre">'MALVINAS',</span> <span class="pre">'YUGOSLAV',</span> <span class="pre">'KINGDOM',</span> <span class="pre">'PROTECTORATE']</span></em><a class="headerlink" href="#hdx.location.country.Country.simplifications" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="hdx.location.country.Country.simplify_countryname">
-<em class="property">classmethod </em><code class="sig-name descname">simplify_countryname</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">country</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.simplify_countryname" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.Country.simplify_countryname">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">simplify_countryname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.country.Country.simplify_countryname" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simplifies country name by removing descriptive text eg. DEMOCRATIC, REPUBLIC OF etc.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -624,25 +628,201 @@ showing if the match is exact or not.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt id="hdx.location.country.CountryError">
-<em class="property">exception </em><code class="sig-prename descclassname">hdx.location.country.</code><code class="sig-name descname">CountryError</code><a class="headerlink" href="#hdx.location.country.CountryError" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.country.CountryError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">hdx.location.country.</span></span><span class="sig-name descname"><span class="pre">CountryError</span></span><a class="headerlink" href="#hdx.location.country.CountryError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-hdx.location.version">
+</section>
+<section id="module-hdx.location.currency">
+<span id="hdx-location-currency-module"></span><h2>hdx.location.currency module<a class="headerlink" href="#module-hdx.location.currency" title="Permalink to this headline">¶</a></h2>
+<p>Currency conversion</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="hdx.location.currency.Currency">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">hdx.location.currency.</span></span><span class="sig-name descname"><span class="pre">Currency</span></span><a class="headerlink" href="#hdx.location.currency.Currency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Currency class for performing currency conversion</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="hdx.location.currency.Currency.get_current_rate">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_current_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#hdx.location.currency.Currency.get_current_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current fx rate for currency</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>currency</strong> (<em>str</em>) – Currency</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>fx rate</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdx.location.currency.Currency.get_current_value_in_currency">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_current_value_in_currency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usdvalue</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#hdx.location.currency.Currency.get_current_value_in_currency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current value in local currency of the value in USD</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>usdvalue</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value in USD</p></li>
+<li><p><strong>currency</strong> (<em>str</em>) – Currency</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value in local currency</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdx.location.currency.Currency.get_current_value_in_usd">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_current_value_in_usd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#hdx.location.currency.Currency.get_current_value_in_usd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current USD value of the value in local currency</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value in local currency</p></li>
+<li><p><strong>currency</strong> (<em>str</em>) – Currency</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value in USD</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdx.location.currency.Currency.get_historic_rate">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_historic_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.currency.Currency.get_historic_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the fx rate for currency on a particular date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>currency</strong> (<em>str</em>) – Currency</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>fx rate</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdx.location.currency.Currency.get_historic_value_in_currency">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_historic_value_in_currency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">usdvalue</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#hdx.location.currency.Currency.get_historic_value_in_currency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current value in local currency of the value in USD on a particular date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value in USD</p></li>
+<li><p><strong>currency</strong> (<em>str</em>) – Currency</p></li>
+<li><p><strong>date</strong> (<em>datetime</em>) – Date to use for fx conversion</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value in local currency</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdx.location.currency.Currency.get_historic_value_in_usd">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_historic_value_in_usd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#hdx.location.currency.Currency.get_historic_value_in_usd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the USD value of the value in local currency on a particular date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – Value in local currency</p></li>
+<li><p><strong>currency</strong> (<em>str</em>) – Currency</p></li>
+<li><p><strong>date</strong> (<em>datetime</em>) – Date to use for fx conversion</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value in USD</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdx.location.currency.Currency.setup">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_rates_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'https://api.exchangerate.host/latest?base=usd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_rates_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">historic_rates_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'https://codeforiati.org/exchangerates-scraper/consolidated.csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback_to_current</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#hdx.location.currency.Currency.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current USD value of the value in local currency</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current_rates_url</strong> (<em>str</em>) – Current rates url to use. Defaults to <a class="reference external" href="https://api.exchangerate.host/latest?base=usd">https://api.exchangerate.host/latest?base=usd</a>.</p></li>
+<li><p><strong>fallback_current_url</strong> (<em>str</em>) – Fallback rates url to use for current rates. Defaults to None.</p></li>
+<li><p><strong>historic_rates_url</strong> (<em>str</em>) – Historic rates url to use. Defaults to <a class="reference external" href="https://codeforiati.org/exchangerates-scraper/consolidated.csv">https://codeforiati.org/exchangerates-scraper/consolidated.csv</a>.</p></li>
+<li><p><strong>fallback_to_current</strong> (<em>bool</em>) – Whether to try getting current USD value if historic is not available.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="hdx.location.currency.CurrencyError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">hdx.location.currency.</span></span><span class="sig-name descname"><span class="pre">CurrencyError</span></span><a class="headerlink" href="#hdx.location.currency.CurrencyError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-hdx.location.phonetics">
+<span id="hdx-location-phonetics-module"></span><h2>hdx.location.phonetics module<a class="headerlink" href="#module-hdx.location.phonetics" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="hdx.location.phonetics.Phonetics">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">hdx.location.phonetics.</span></span><span class="sig-name descname"><span class="pre">Phonetics</span></span><a class="headerlink" href="#hdx.location.phonetics.Phonetics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyphonetics.phonetics.refined_soundex.RefinedSoundex</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="hdx.location.phonetics.Phonetics.match">
+<span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">possible_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_possible_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.phonetics.Phonetics.match" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-hdx.location.version">
 <span id="hdx-location-version-module"></span><h2>hdx.location.version module<a class="headerlink" href="#module-hdx.location.version" title="Permalink to this headline">¶</a></h2>
 <p>Version utility</p>
 <dl class="py function">
-<dt id="hdx.location.version.get_country_version">
-<code class="sig-prename descclassname">hdx.location.version.</code><code class="sig-name descname">get_country_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.version.get_country_version" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="hdx.location.version.get_country_version">
+<span class="sig-prename descclassname"><span class="pre">hdx.location.version.</span></span><span class="sig-name descname"><span class="pre">get_country_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.version.get_country_version" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</div>
-<div class="section" id="module-hdx.location">
+</section>
+<section id="module-hdx.location">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hdx.location" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="hdx.location.clean_name">
+<span class="sig-prename descclassname"><span class="pre">hdx.location.</span></span><span class="sig-name descname"><span class="pre">clean_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.clean_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdx.location.get_phonetics">
+<span class="sig-prename descclassname"><span class="pre">hdx.location.</span></span><span class="sig-name descname"><span class="pre">get_phonetics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.location.get_phonetics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
 
 
           </div>
@@ -677,7 +857,7 @@ showing if the match is exact or not.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -699,7 +879,7 @@ showing if the match is exact or not.</p>
       &copy;Michael Rans.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

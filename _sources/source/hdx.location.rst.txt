@@ -20,6 +20,22 @@ hdx.location.country module
    :undoc-members:
    :show-inheritance:
 
+hdx.location.currency module
+----------------------------
+
+.. automodule:: hdx.location.currency
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+hdx.location.phonetics module
+-----------------------------
+
+.. automodule:: hdx.location.phonetics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 hdx.location.version module
 ---------------------------
 

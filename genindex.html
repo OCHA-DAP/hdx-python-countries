@@ -6,9 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index &#8212; HDX Python Country 1.0 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -63,6 +63,8 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/hdx.location.html#hdx.location.clean_name">clean_name() (in module hdx.location)</a>
+</li>
       <li><a href="source/hdx.location.html#hdx.location.adminone.AdminOne.convert_pcode_length">convert_pcode_length() (hdx.location.adminone.AdminOne method)</a>
 </li>
       <li><a href="source/hdx.location.html#hdx.location.country.Country.countriesdata">countriesdata() (hdx.location.country.Country class method)</a>
@@ -72,6 +74,10 @@
       <li><a href="source/hdx.location.html#hdx.location.country.Country">Country (class in hdx.location.country)</a>
 </li>
       <li><a href="source/hdx.location.html#hdx.location.country.CountryError">CountryError</a>
+</li>
+      <li><a href="source/hdx.location.html#hdx.location.currency.Currency">Currency (class in hdx.location.currency)</a>
+</li>
+      <li><a href="source/hdx.location.html#hdx.location.currency.CurrencyError">CurrencyError</a>
 </li>
   </ul></td>
 </tr></table>
@@ -109,9 +115,21 @@
 </li>
       <li><a href="source/hdx.location.html#hdx.location.country.Country.get_country_name_from_m49">get_country_name_from_m49() (hdx.location.country.Country class method)</a>
 </li>
+      <li><a href="source/hdx.location.html#hdx.location.version.get_country_version">get_country_version() (in module hdx.location.version)</a>
+</li>
+      <li><a href="source/hdx.location.html#hdx.location.currency.Currency.get_current_rate">get_current_rate() (hdx.location.currency.Currency class method)</a>
+</li>
+      <li><a href="source/hdx.location.html#hdx.location.currency.Currency.get_current_value_in_currency">get_current_value_in_currency() (hdx.location.currency.Currency class method)</a>
+</li>
+      <li><a href="source/hdx.location.html#hdx.location.currency.Currency.get_current_value_in_usd">get_current_value_in_usd() (hdx.location.currency.Currency class method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="source/hdx.location.html#hdx.location.version.get_country_version">get_country_version() (in module hdx.location.version)</a>
+      <li><a href="source/hdx.location.html#hdx.location.currency.Currency.get_historic_rate">get_historic_rate() (hdx.location.currency.Currency class method)</a>
+</li>
+      <li><a href="source/hdx.location.html#hdx.location.currency.Currency.get_historic_value_in_currency">get_historic_value_in_currency() (hdx.location.currency.Currency class method)</a>
+</li>
+      <li><a href="source/hdx.location.html#hdx.location.currency.Currency.get_historic_value_in_usd">get_historic_value_in_usd() (hdx.location.currency.Currency class method)</a>
 </li>
       <li><a href="source/hdx.location.html#hdx.location.country.Country.get_iso2_from_iso3">get_iso2_from_iso3() (hdx.location.country.Country class method)</a>
 </li>
@@ -126,6 +144,8 @@
       <li><a href="source/hdx.location.html#hdx.location.country.Country.get_m49_from_iso3">get_m49_from_iso3() (hdx.location.country.Country class method)</a>
 </li>
       <li><a href="source/hdx.location.html#hdx.location.adminone.AdminOne.get_pcode">get_pcode() (hdx.location.adminone.AdminOne method)</a>
+</li>
+      <li><a href="source/hdx.location.html#hdx.location.get_phonetics">get_phonetics() (in module hdx.location)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -154,13 +174,27 @@
         <li><a href="source/hdx.location.html#module-hdx.location.adminone">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     hdx.location.country
 
       <ul>
         <li><a href="source/hdx.location.html#module-hdx.location.country">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    hdx.location.currency
+
+      <ul>
+        <li><a href="source/hdx.location.html#module-hdx.location.currency">module</a>
+</li>
+      </ul></li>
+      <li>
+    hdx.location.phonetics
+
+      <ul>
+        <li><a href="source/hdx.location.html#module-hdx.location.phonetics">module</a>
 </li>
       </ul></li>
       <li>
@@ -186,6 +220,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/hdx.location.html#hdx.location.country.Country.major_differentiators">major_differentiators (hdx.location.country.Country attribute)</a>
 </li>
+      <li><a href="source/hdx.location.html#hdx.location.phonetics.Phonetics.match">match() (hdx.location.phonetics.Phonetics method)</a>
+</li>
       <li>
     module
 
@@ -197,6 +233,10 @@
         <li><a href="source/hdx.location.html#module-hdx.location.adminone">hdx.location.adminone</a>
 </li>
         <li><a href="source/hdx.location.html#module-hdx.location.country">hdx.location.country</a>
+</li>
+        <li><a href="source/hdx.location.html#module-hdx.location.currency">hdx.location.currency</a>
+</li>
+        <li><a href="source/hdx.location.html#module-hdx.location.phonetics">hdx.location.phonetics</a>
 </li>
         <li><a href="source/hdx.location.html#module-hdx.location.version">hdx.location.version</a>
 </li>
@@ -243,6 +283,8 @@
 </li>
       <li><a href="source/hdx.location.html#hdx.location.adminone.AdminOne.pcodes">pcodes (hdx.location.adminone.AdminOne attribute)</a>
 </li>
+      <li><a href="source/hdx.location.html#hdx.location.phonetics.Phonetics">Phonetics (class in hdx.location.phonetics)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -258,6 +300,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/hdx.location.html#hdx.location.country.Country.set_ocha_url">set_ocha_url() (hdx.location.country.Country class method)</a>
+</li>
+      <li><a href="source/hdx.location.html#hdx.location.currency.Currency.setup">setup() (hdx.location.currency.Currency class method)</a>
 </li>
       <li><a href="source/hdx.location.html#hdx.location.country.Country.simplifications">simplifications (hdx.location.country.Country attribute)</a>
 </li>
@@ -299,7 +343,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -321,7 +365,7 @@
       &copy;Michael Rans.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
